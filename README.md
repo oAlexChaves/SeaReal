@@ -1,9 +1,9 @@
 # SeaReal
 
-Este projeto implementa um **sistema de Realidade Aumentada (AR)** utilizando **marcadores ArUco** e **modelos 3D**.  
+Este projeto implementa uma **sistema de Realidade Aumentada (AR)** utilizando **marcadores ArUco** e **modelos 3D**.
 A aplicação detecta marcadores em tempo real através da câmera, estima sua pose e **projeta um modelo 3D sobre o marcador**.
 
-O projeto foi desenvolvido em **Python**, com uso das bibliotecas **OpenCV**, **NumPy** e **Trimesh**.  
+O projeto foi desenvolvido em **Python**, com uso das bibliotecas **OpenCV**, **NumPy** e **Trimesh**.
 Suporta múltiplos formatos 3D, incluindo: `.OBJ`, `.STL`, `.PLY`, `.FBX`, `.GLB`, `.GLTF`, `.3DS`, e `.DAE (Collada)`.
 
 ---
@@ -34,7 +34,7 @@ Suporta múltiplos formatos 3D, incluindo: `.OBJ`, `.STL`, `.PLY`, `.FBX`, `.GLB
 
 ## 🧠 Conceito do Sistema
 
-O sistema usa a biblioteca **OpenCV ArUco** para detectar marcadores visuais (QR-like).  
+O sistema usa a biblioteca **OpenCV ArUco** para detectar marcadores visuais (QR-like).
 Após a detecção, ele calcula a **pose 3D** (posição e orientação no espaço) do marcador em relação à câmera.
 
 Com base nessa pose, o **modelo 3D** carregado é projetado sobre o marcador — permitindo **sobreposição realista** no vídeo em tempo real.
@@ -49,8 +49,21 @@ git clone https://github.com/oAlexChaves/SeaReal
 cd SeaReal
 ```
 
+### 2️⃣ Criar e ativar o ambiente virtual
+```bash
+python -m venv venv
+```
 
-### 2️⃣ Instalar dependências
+- **Windows (PowerShell):**
+  ```bash
+venv\Scripts\activate
+```
+- **Linux/Mac:**
+  ```bash
+source venv/bin/activate
+```
+
+### 3️⃣ Instalar dependências
 ```bash
 pip install opencv-python numpy trimesh
 ```
@@ -60,6 +73,12 @@ pip install opencv-python numpy trimesh
 pip install pyglet pycollada
 ```
 
+### 4️⃣ Instalar todas as dependências do projeto (via arquivo `requirements.txt`)
+Caso você tenha o arquivo `requirements.txt` exportado do seu ambiente anterior:
+```bash
+pip install -r requirements.txt
+```
+
 ---
 
 ## 🎮 Como Usar
@@ -67,14 +86,14 @@ pip install pyglet pycollada
 1. **Coloque um marcador ArUco 6x6_250** impresso ou exibido na tela.  
 
 2. **Edite o caminho do modelo no código:**
-   ```python
-   model_path = "tartarugaReduzida.obj"  # coloque o caminho do seu modelo
-   ```
+```python
+model_path = "tartarugaReduzida.obj"  # coloque o caminho do seu modelo
+```
 
 3. **Execute o script:**
-   ```bash
-   python main.py
-   ```
+```bash
+python main.py
+```
 
 4. **Selecione a câmera** (0, 1, 2...) conforme o dispositivo conectado.
 
@@ -115,10 +134,11 @@ MODEL_OFFSET_Z = 0.05
 
 ```
 📂 aruco-3d-viewer
- ├── main.py              # Código principal do sistema
- ├── tartarugaReduzida.obj  # modelo 3D
- ├── marcado_com_margem.png  # marcador que é usado na camera para ser visualizado
- ├── README.md            # Este arquivo
+ ├── main.py                  # Código principal do sistema
+ ├── tartarugaReduzida.obj    # Modelo 3D
+ ├── marcador_com_margem.png  # Marcador usado pela câmera
+ ├── requirements.txt         # Lista de dependências do projeto
+ ├── README.md                # Este arquivo
 ```
 
 ---
@@ -127,7 +147,7 @@ MODEL_OFFSET_Z = 0.05
 
 - **Python:** 3.12  
 - **OpenCV:** 4.10+  
-- **Sistemas:** Windows 10
+- **Sistemas:** Windows 10  
 - **Câmeras:** Webcam integrada / USB  
 
 ---
@@ -142,15 +162,3 @@ MODEL_OFFSET_Z = 0.05
 
 ---
 
-## 📜 Licença
-
-Este projeto é distribuído sob a licença **MIT** — livre para uso e modificação com atribuição ao autor.
-
----
-
-## 👨‍💻 Autor
-
-**Alexsandro Cavalcanti Chaves Filho**  
-🎓 Pesquisador na CESAR School – Sistemas Embarcados e Robótica  
-💡 Desenvolvedor Python | Visão Computacional | Realidade Aumentada  
-📧 [LinkedIn](https://www.linkedin.com/in/alexsandrochavesfilho)
